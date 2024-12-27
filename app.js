@@ -3,12 +3,14 @@ const app = express();
 import bodyParser from "body-parser";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import dotenv from "dotenv";
+import cors from "cors";
 
 //.env
 dotenv.config();
 
 //middlewares use
 app.use(bodyParser.json());
+app.use(cors());
 
 //apis
 app.post("/question", async (req, res) => {
